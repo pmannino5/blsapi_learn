@@ -59,16 +59,17 @@ ggplot(data = county_u_vac,mapping = aes(x=pct_total_pop, y=u_change)) +
   ylab("Percent Change in Unemployment Rate, December - March") +
   labs(title = "Unemployment Rate and Vaccinations",
        subtitle = "Counties in California") +
-  ggpubr::stat_regline_equation(label.x = 45, label.y = 1,size=3.5) +
-  ggpubr::stat_cor(aes(label=..rr.label..), label.x = 45, label.y = .8,size=3.5) +
-  theme(axis.title.x = element_text(size=10),
-        axis.title.y = element_text(size=10))
+  ggpubr::stat_regline_equation(label.x = 45, label.y = 10,size=3.5) +
+  ggpubr::stat_cor(aes(label=..rr.label..), label.x = 45, label.y = 8,size=3.5) +
+  theme(axis.title.x = element_text(size=8),
+        axis.title.y = element_text(size=8))
 
 # relatively strong negative correlation. R2 is .33. Every pp increase in pop vaccinated
 # assoc with an unemployment rate decreases of 0.35%. Vaccination might be a decent stimulus
 
 # save
-ggsave(filename = "vaccination_employment.png", device="png")
+ggsave(filename = "vaccination_employment.png", device="png",
+       units='in', height = 4, width=6)
 
   
 
