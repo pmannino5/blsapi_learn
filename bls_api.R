@@ -4,6 +4,7 @@
 library(tidycensus)
 library(blsAPI)
 library(ggplot2)
+library(dplyr)
 
 # set working directory
 setwd("/Users/petermannino/Documents/bls_api")
