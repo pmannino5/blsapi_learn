@@ -11,7 +11,7 @@ library(fixest)
 
 
 # set working directory
-setwd("/Users/petermannino/Documents/Data Manipulation Training/bls_api")
+setwd("/Users/petermannino/Documents/bls_api")
 
 # get fips codes for counties
 data(fips_codes)
@@ -33,7 +33,7 @@ series_id<-as.vector(ca_county$u_rate_series)
 payload<-list('seriesid' = series_id,
               'startyear' = 2019,
               'endyear' = 2021,
-              'registrationKey' = 'd71553aae6e0461ea407e08d772e26ed')
+              'registrationKey' = 'key here')
 
 u_rate<-blsAPI(payload = payload, api_version = 2, return_data_frame = TRUE) # bls api call, return df
 
